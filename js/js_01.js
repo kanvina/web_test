@@ -42,7 +42,7 @@ function onload_show() {
 function show_loction(){
 
 
-    $.getJSON("data/beijing_json.json", function (data) {
+    $.getJSON("../data/beijing_json.json", function (data) {
       
         var points_list=data.features[0].geometry.coordinates[0][0]
 

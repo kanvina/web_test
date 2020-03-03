@@ -1,0 +1,68 @@
+html,body {
+    background: #333;
+    background-image: url("../img/earth.png");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  
+  .shape {
+    fill:transparent;
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    stroke: #ffffcc;
+  }
+  
+  a {
+    color: #fff;
+    font-family: 'Roboto Condensed';
+    font-size: 20px;
+    letter-spacing: 11px;
+    line-height: 32px;
+    position: relative;
+    top: -48px;
+    text-decoration: none;
+  }
+  
+  @keyframes draw {
+    0% {
+      stroke-dasharray: 140 540;
+      stroke-dashoffset: -474;
+      stroke-width: 8px;
+    }
+    100% {
+      stroke-dasharray: 760;
+      stroke-dashoffset: 0;
+      stroke-width: 2px;
+    }
+  }
+
+  .svg-wrapper_01 {
+    height: 55px;
+    width: 320px;
+    position: absolute;
+    top: 25%;
+    left:12% ;
+  }
+  .svg-wrapper_02 {
+    height: 55px;
+    width: 320px;
+    position: absolute;
+    top: 50%;
+    left:10% ;
+  }
+  
+  .svg-wrapper_01:hover .shape {
+    -webkit-animation: 0.5s draw linear forwards;
+    animation: 0.5s draw linear forwards;
+  }
+
+  .svg-wrapper_02:hover .shape {
+    -webkit-animation: 0.5s draw linear forwards;
+    animation: 0.5s draw linear forwards;
+  }
