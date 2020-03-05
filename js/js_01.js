@@ -47,7 +47,7 @@ L.control.layers(baseLayers).addTo(map);
 // }
 
 function show_loction() {
-    $.getJSON("../data/suqian_geojson.geojson", function (data) {
+    $.getJSON("../data/suqian_geojson.json", function (data) {
 
         var myStyle={
             "color": "red",
