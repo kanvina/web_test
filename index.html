@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebGIS Learning</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
-
 </head>
 
 <body>
@@ -22,9 +20,10 @@
       </defs>
       <rect class="shape" height='100%' width='100%' filter="url(#f2)" />
     </svg>
-    <a href="index_01.html">01 Leaflet加载</a></div>
+    <a href="index_01.html">01 Leaflet加载示例</a></div>
 
   <div class="svg-wrapper_02">
+  
     <svg height='100%' width='100%' xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="f2" x="0" y="0" width="150%" height="150%">
@@ -35,8 +34,21 @@
       </defs>
       <rect class="shape" height='100%' width='100%' filter="url(#f2)" />
     </svg>
-    <a href="index_02.html">02 功能待添加</a></div>
+    <a href="index_02.html">02 气象可视化示例</a></div>
 
+    <div class="svg-wrapper_03">
+  
+      <svg height='100%' width='100%' xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="f2" x="0" y="0" width="150%" height="150%">
+            <feOffset result="offOut" in="SourceGraphic" dx="10" dy="10" />
+            <feGaussianBlur result="blutOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs>
+        <rect class="shape" height='100%' width='100%' filter="url(#f2)" />
+      </svg>
+      <a href="index_03.html">03 内容待添加</a></div>
 
 </body>
 

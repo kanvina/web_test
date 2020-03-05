@@ -15,30 +15,35 @@
 
         #id_div_jsonshow {
             background-color: aquamarine;
-            height: 10%;
+            height: 5%;
         }
 
         #map {
             width: 100%;
-            height: 90%;
+            height: 95%;
+        }
+        a{
+            text-decoration:none;
+            color: #000;
         }
     </style>
 </head>
 
-<body id="body_id" onload="onload_show()">
+<body id="body_id" >
     
     <div id=id_div_jsonshow>
-        <button > <a href="index.html">返回主页</a></button>
-        <select id="select_id">
+        <button > <a href="index.html" >返回主页</a></button>
+     
+        <!-- <select id="select_id">
             <option value="country">country</option>
             <option value="city">city</option>
             <option value="times">times</option>
             <option value="date">date</option>
         </select>
         <input type="text" id="input_text">
-        <br>
+        <br> -->
 
-        <button id="btn_show_loction" onclick="show_loction()">显示北京范围</button>
+        <button id="btn_show_loction" onclick="show_loction()">显示范围</button>
 
     </div>
 
