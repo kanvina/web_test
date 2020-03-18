@@ -5,10 +5,19 @@
 <head>
   <script src="https://cesiumjs.org/releases/1.51/Build/Cesium/Cesium.js"></script>
   <link href="https://cesiumjs.org/releases/1.51/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="cesiumContainer" style="width: 100%; height:100%"></div>
+  <div id="toolDIV" style="width: 100%; height:5%">
+    <button><a href="index.html">返回主页</a></button>
+  </div>
+  <div id="cesiumContainer" style="width: 90%; height:100%"></div>
   <script>
     Cesium.Ion.defaultAccessToken =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwOGQyMTk4Yi1kNTAxLTRhOTktODA1NS0xZmM3ZTM5OWViOTciLCJpZCI6MjMzNjIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1ODMyNDc2NDB9.TObH13SSruQjzlqvaaJQ9scOUrQN2VaM5ZuuVdX23D0';
