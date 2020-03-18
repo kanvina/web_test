@@ -1,69 +1,52 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=10" />
-    <meta
-      name="viewport"
-      content="initial-scale=1, maximum-scale=1,user-scalable=no"
-    />
-    <title>Simple Map</title>
-    <link rel="stylesheet" href="./libs/claro.css" />
-    <link rel="stylesheet" href="./libs/esri.css" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+    <script src="js\ArcGIS_API.js"></script>
+    <script src="js\js_03.js"></script>
+
+    <title>Document</title>
     <style>
-      html,
-      body,
-      #map {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        background-color: #fff;
-        overflow: hidden;
-        font-family: 'Trebuchet MS';
-      }
+        body,html {
+            height: 100%;
+            width: 100%;
+        }
+
+        #toolDiv {
+            width: 100%;
+            height: 5%;
+            background-color: pink;
+        } 
+
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 90%;
+            width: 100%;
+        }
+        #lowDiv{
+            height: 5%;
+        }
     </style>
-    <!-- <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"></script> -->
-    <script src="js\arcgis.api.3.5.js"></script>
-    <script>
-      dojo.require('esri.map');
-      var map = null;
-      var extent = null;
-      var maxExtent = null;
+</head>
 
-      function init() {
-        map = new esri.Map('map', {
-          basemap: 'topo',
-          center: [-122.45, 37.75], //long, lat
-          zoom: 14,
-          sliderStyle: 'small'
-        });
-        // 设置初始化区域为最大区域（这里根据自己的情况设置，此处做测试）
-        dojo.connect(map, 'onLoad', function() {
-          maxExtent = map.extent;
-        });
+<body onload="show_basemap('2D')">
+    <div id='toolDiv'>
+        <button ><a href="index.html">返回主页</a></button>
+        <label for="">&nbsp;当前显示模式：</label>
+        <select onchange ="show_basemap(this.value)" >
+            <option value="2D" selected >2D显示</option>
+            <option value="3D">3D显示</option>
+          </select>
+    </div>
+    
 
-        // 检查是否在最大的extent区域氛围内，如果超出了，就重新设置区域
-        dojo.connect(map, 'onExtentChange', function(extent) {
-          if (
-            map.extent.xmin < maxExtent.xmin ||
-            map.extent.ymin < maxExtent.ymin ||
-            map.extent.xmax > maxExtent.xmax ||
-            map.extent.ymax > maxExtent.ymax
-          ) {
-            map.setExtent(maxExtent);
-            console.log('超出最大区域，重置区域氛围！');
-          }
-        });
-      }
+    <div id="viewDiv"></div>
 
-      dojo.ready(init);
-    </script>
-  </head>
+    <div id="lowDiv"></div>
+</body>
 
-  <body class="claro">
-    <div id="map"></div>
-  </body>
 </html>

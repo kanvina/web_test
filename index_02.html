@@ -1,38 +1,22 @@
+<!-- leaflet -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>雨水分布图Demo</title>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <link href="https://cdn.bootcss.com/leaflet/1.3.4/leaflet.css" rel="stylesheet">
-    <style>
-      body{
-        height:600px ;
-      }
-      .operate {
-        background-color: antiquewhite;
-        height: 5%;
-      }
-      #map{
-        height: 95%;
-      }
-    </style>
-  </head>
 
-  <body >
-    <div class="operate" >
-      <!-- <p >雨水分布图Demo</p> -->
-      <button id="show-cloud" onclick="show_cloud()">显示云图</button>
-      <button id="hide-cloud" onclick="hide_cloud()">隐藏云图</button>
-      <label for="">&nbsp;&nbsp;&nbsp;未来雨水周期：</label>
-      <button class="rain-btn" data-hour="24" onclick="show_rain(24)">24小时</button>
-      <button class="rain-btn" data-hour="48"onclick="show_rain(48)">48小时</button>
-      <button class="rain-btn" data-hour="72"onclick="show_rain(72)">72小时</button>
-    </div>
-    <div id="map" style="height: 600px;"></div>
+<head>
+  <script src="https://cesiumjs.org/releases/1.51/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesiumjs.org/releases/1.51/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
 
-    <script src="js/js_02.js"></script>
-  </body>
+<body>
+  <div id="cesiumContainer" style="width: 100%; height:100%"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwOGQyMTk4Yi1kNTAxLTRhOTktODA1NS0xZmM3ZTM5OWViOTciLCJpZCI6MjMzNjIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1ODMyNDc2NDB9.TObH13SSruQjzlqvaaJQ9scOUrQN2VaM5ZuuVdX23D0';
+
+    var viewer = new Cesium.Viewer('cesiumContainer');
+
+    viewer.zoomTo(wyoming);
+  </script>
+</body>
+
 </html>
